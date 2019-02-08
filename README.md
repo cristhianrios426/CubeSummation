@@ -13,7 +13,7 @@ Esta primera parte se desarrollo así con el fin de proveer el codigo necesario 
 
 ### Paradigma de desarrollo 2
 
-Se desarrolló sobre laravel 5.5, haciendo uso de Programación Orientada a Objetos, creando un servicio  y haciendo uso de Service Container de laravel y la injeccon de dependencias por typehint. Se hizo uso de exepciones para validar los datos de entrada. Para correr el aplicativo de debe correr el siguiente comando:
+Se desarrolló sobre laravel 5.5, haciendo uso de Programación Orientada a Objetos, creando un servicio  y haciendo uso de Service Container de laravel y la injeccon de dependencias por typehint. Se hizo uso de excepciones para validar los datos de entrada. Para correr el aplicativo de debe correr el siguiente comando:
 
 ```sh
 $ php artisan sumcube stdin.txt
