@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Services\TestCubeSummation;
+use App\Exceptions\InputException;
 
 class SumCube extends Command
 {
@@ -44,7 +45,12 @@ class SumCube extends Command
     {
         $file = $this->argument('path');
         $this->tester->setInputFile($file);
-        $this->tester->run();
-        $this->info($this->tester->getOutput());
+        try {
+            $this->tester->run();
+            $this->info($this->tester->getOutput());  
+        } catch (InputException $e) {
+            $this->error($e->getMessage());
+        }
+        
     }
 }
