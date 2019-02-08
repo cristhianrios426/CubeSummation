@@ -1,5 +1,5 @@
 <?php 
-function opeationCubeUpdate($cube, $N ,$x, $y, $z, $W){
+function operationCubeUpdate($cube, $N ,$x, $y, $z, $W){
 	$coors = [$x, $y, $z];
 	foreach ($coors as $value) {
 		if($value <= 0 || $value > $N) throw new RunTimeException("Error de validación: Las coordenadas x, y y z deben estar entre 1 y $N. entrada actual: $x, $y, $z", 1);
@@ -11,7 +11,7 @@ function opeationCubeUpdate($cube, $N ,$x, $y, $z, $W){
 	$cube[$x][$y][$z] = $W;
 	return $cube;
 }
-function opeationCubeQuery($cube, $N ,$x1, $y1, $z1, $x2, $y2, $z2){
+function operationCubeQuery($cube, $N ,$x1, $y1, $z1, $x2, $y2, $z2){
 	$coors = [ "x"=>[$x1,$x2] ,"y"=>[$y1,$y2], "z"=>[$z1,$z2] ];
 	foreach ($coors as $key => $value) {
 		if($value[0] > $value[1]) throw new RunTimeException("Error de validación: La coordenada {$key}1 debe ser mayor o igual a {$key}2. entrada actual: {$key}1 = {$value[0]}; {$key}2 = {$value[1]}", 1);
@@ -60,7 +60,7 @@ try {
 			unset($operationExploded[0]);
 			$args = array_values($operationExploded);
 			array_unshift($args, $cube, $N);
-			$operationFn = 'opeationCube'.ucfirst(strtolower($operationName));	
+			$operationFn = 'operationCube'.ucfirst(strtolower($operationName));	
 			if(!function_exists($operationFn))	if($m != $M) throw new RunTimeException("Error de validación: El número de operaciones ejectadas no coincide con las declaradas. ejecutadas: $m; declaradas: $M", 1);			
 			$cube = call_user_func_array($operationFn, $args);		
 		}
