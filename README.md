@@ -1,4 +1,4 @@
-# Integ.ro - Summation cube
+# Integ.ro - Cube Summation
 
 El presente repositorio contine la prueba solicitada para el ingreso.
 
